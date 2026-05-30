@@ -1429,6 +1429,7 @@
     </section>
 
           <!-- Apply Modal -->
+           
                <div
       id="applyModal"
       class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm"
@@ -1658,5 +1659,46 @@
             &times;
           </button>
         </div>
+
+         <!-- FORM modal -->
+        <form id="postJobForm" class="grid grid-cols-1 gap-4">
+          <div>
+            <label class="text-sm text-slate-600 font-medium">Job Title</label>
+            <input
+              id="pjTitle"
+              type="text"
+              placeholder="e.g. Frontend Developer"
+              class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-200"
+              required
+            />
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm text-slate-600 font-medium">Company</label>
+              <input
+                id="pjCompany"
+                type="text"
+                placeholder="Company Name"
+                class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-200"
+                required
+              />
+            </div>
+            <div>
+              <label class="text-sm text-slate-600 font-medium">Location</label>
+              <input
+                id="pjLocation"
+                type="text"
+                placeholder="City, Remote, Hybrid..."
+                class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-200"
+              />
+            </div>
+          </div>
+
+       
+        </form>
+      </div>
+    </div>
+
   </body>
 </html>
