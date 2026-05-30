@@ -1695,7 +1695,56 @@
             </div>
           </div>
 
-       
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm text-slate-600 font-medium"
+                >Experience</label
+              >
+              <input
+                id="pjExp"
+                type="text"
+                placeholder="e.g. 2 - 4 yrs"
+                class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-200"
+              />
+            </div>
+            <div>
+              <label class="text-sm text-slate-600 font-medium">Salary</label>
+              <input
+                id="pjSalary"
+                type="text"
+                placeholder="e.g. 6 - 10 LPA"
+                class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-200"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="text-sm text-slate-600 font-medium"
+              >Description</label
+            >
+            <textarea
+              id="pjDesc"
+              rows="4"
+              placeholder="Describe key responsibilities and required skills..."
+              class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-200"
+            ></textarea>
+          </div>
+
+          <div class="flex justify-end gap-2 pt-2">
+            <button
+              type="button"
+              id="cancelPostJob"
+              class="px-4 py-2 border border-slate-300 rounded-md text-slate-600 hover:bg-slate-100 transition"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="px-4 py-2 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 shadow-sm transition"
+            >
+              Post Job
+            </button>
+          </div>
         </form>
       </div>
     </div>
