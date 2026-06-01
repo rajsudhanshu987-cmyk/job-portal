@@ -32,6 +32,31 @@
         });
     }
 
+    const notifications = [
+    "🔔 New placement added: Data Scientist",
+    "🔔 New placement added: Frontend Developer",
+    "🔔 New placement added: Backend Engineer",
+    "🔔 New placement added: ML Engineer",
+    "🔔 New placement added: UI/UX Designer"
+];
+
+const notificationBox = document.getElementById("jobNotification");
+
+function showNotification() {
+    const random =
+        notifications[Math.floor(Math.random() * notifications.length)];
+
+    notificationBox.textContent = random;
+
+    notificationBox.classList.remove("hidden");
+
+    setTimeout(() => {
+        notificationBox.classList.add("hidden");
+    }, 3000);
+}
+
+setInterval(showNotification, 10000);
+
     const mobileBtn = document.getElementById("mobileBtn");
     const mobileMenu = document.getElementById("mobileMenu");
 
