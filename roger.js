@@ -1,36 +1,87 @@
-﻿function toggleModal(openBtnId, modalId, closeSelectors) {
-    const openBtn = document.getElementById(openBtnId);
-    const modal = document.getElementById(modalId);
-    const closeElements = modal.querySelectorAll(closeSelectors);
+﻿document.addEventListener("DOMContentLoaded", () => {
 
-    if(!modal || !openBtn) return;
+    
+    function toggleModal(openBtnId, modalId, closeSelectors) {
+        const openBtn = document.getElementById(openBtnId);
+        const modal = document.getElementById(modalId);
 
-    openBtn.addEventListener('click', () => {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-    });
+        if (!openBtn || !modal) return;
 
-    closeElements.forEach(function (btn) {
-        btn.addEventListener('click', () => {
-            modal.classList.add('hidden');
-        });
-    });
+        const closeBtns = modal.querySelectorAll(closeSelectors);
 
-    document.querySelectorAll(".applyBtn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const modal = document.getElementById("applyModal");
+       
+        openBtn.addEventListener("click", () => {
             modal.classList.remove("hidden");
             modal.classList.add("flex");
         });
+
+    
+        closeBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+            });
+        });
+
+       
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+            }
+        });
+    }
+
+  
+    toggleModal(
+        "loginSeekerBtn",
+        "seekerModal",
+        ".closeSeeker"
+    );
+
+    
+    toggleModal(
+        "loginRecruiterBtn",
+        "LoginModal",
+        ".closeRecruiter, .closeSeeker"
+    );
+
+   
+    toggleModal(
+        "openPostJob",
+        "postJobModal",
+        "#closePostJob, #cancelPostJob"
+    );
+
+   
+    const applyModal = document.getElementById("applyModal");
+
+    document.querySelectorAll(".applyBtn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            applyModal.classList.remove("hidden");
+            applyModal.classList.add("flex");
+        });
     });
-    toggleModal("closeApply", "applyModal", "#closeApply","#cancelApply");
-}
+
+    document
+        .querySelectorAll("#closeApply, #cancelApply")
+        .forEach(btn => {
+            btn.addEventListener("click", () => {
+                applyModal.classList.add("hidden");
+                applyModal.classList.remove("flex");
+            });
+        });
+
+ 
+    applyModal?.addEventListener("click", (e) => {
+        if (e.target === applyModal) {
+            applyModal.classList.add("hidden");
+            applyModal.classList.remove("flex");
+        }
+    });
+
+});
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    toggleModal("openLogin", "loginModal", "#closeLogin","#cancelLogin");
-    toggleModal("openSignup", "signupModal", "#closeSignup","#cancelSignup");
-    toggleModal("openPostJob", "postJobModal", "#closePostJob","#cancelPostJob");
-}); 
 
 
