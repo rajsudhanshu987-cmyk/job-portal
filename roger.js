@@ -63,19 +63,19 @@ const toast = document.getElementById("toast");
 applyForm?.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Show toast
+    
     toast.classList.remove("hidden");
 
-    // Hide toast after 3 seconds
+    
     setTimeout(() => {
         toast.classList.add("hidden");
     }, 3000);
 
-    // Close modal
+ 
     applyModal.classList.add("hidden");
     applyModal.classList.remove("flex");
 
-    // Reset form
+   
     applyForm.reset();
 });
 
