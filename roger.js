@@ -79,11 +79,6 @@ applyForm?.addEventListener("submit", (e) => {
     applyForm.reset();
 });
 
-const darkModeBtn = document.getElementById("darkModeBtn");
-
-darkModeBtn?.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-});
 
     const mobileBtn = document.getElementById("mobileBtn");
     const mobileMenu = document.getElementById("mobileMenu");
