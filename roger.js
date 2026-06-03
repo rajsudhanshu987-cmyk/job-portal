@@ -112,7 +112,23 @@ document.querySelectorAll(".viewBtn").forEach(btn => {
 
 });
 
+closeJobModal.addEventListener("click", () => {
 
+    jobDetailsModal.classList.add("hidden");
+    jobDetailsModal.classList.remove("flex");
+
+});
+
+jobDetailsModal.addEventListener("click", (e) => {
+
+    if (e.target === jobDetailsModal) {
+
+        jobDetailsModal.classList.add("hidden");
+        jobDetailsModal.classList.remove("flex");
+
+    }
+
+});
 
 
 
