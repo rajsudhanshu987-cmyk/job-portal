@@ -1319,11 +1319,16 @@
               >
                 Apply
               </button>
-              <button
-                class="px-4 py-2 text-sm border border-slate-300 text-slate-700 rounded-md hover:bg-slate-100 transition"
-              >
-                View
-              </button>
+             <button
+    class="viewBtn px-4 py-2 text-sm border border-slate-300 text-slate-700 rounded-md hover:bg-slate-100 transition"
+    data-title="Data Scientist"
+    data-company="InsightEdge"
+    data-salary="9 - 14 LPA"
+    data-skills="Python, SQL, Machine Learning, Pandas"
+    data-description="Analyze data, build ML models, and create dashboards."
+>
+    View
+</button>
             </div>
           </div>
 
@@ -1894,6 +1899,52 @@
         </div>
       </div>
     </footer>
+
+    <div
+    id="jobDetailsModal"
+    class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50"
+>
+    <div class="bg-white p-6 rounded-2xl max-w-lg w-full mx-4">
+
+        <div class="flex justify-between items-center mb-4">
+            <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+
+            <button
+                id="closeJobModal"
+                class="text-2xl text-gray-500 hover:text-black"
+            >
+                &times;
+            </button>
+        </div>
+
+        <p class="mb-2">
+            <strong>Company:</strong>
+            <span id="modalCompany"></span>
+        </p>
+
+        <p class="mb-2">
+            <strong>Salary:</strong>
+            <span id="modalSalary"></span>
+        </p>
+
+        <p class="mb-2">
+            <strong>Skills:</strong>
+            <span id="modalSkills"></span>
+        </p>
+
+        <p class="mb-4">
+            <strong>Description:</strong>
+            <span id="modalDescription"></span>
+        </p>
+
+        <button
+            class="applyBtn w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700"
+        >
+            Apply Now
+        </button>
+
+    </div>
+</div>
     </section>
 
 <!-- features -->
