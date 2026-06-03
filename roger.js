@@ -80,6 +80,43 @@ applyForm?.addEventListener("submit", (e) => {
 });
 
 
+
+const jobDetailsModal =
+    document.getElementById("jobDetailsModal");
+
+const closeJobModal =
+    document.getElementById("closeJobModal");
+
+document.querySelectorAll(".viewBtn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        document.getElementById("modalTitle").textContent =
+            btn.dataset.title;
+
+        document.getElementById("modalCompany").textContent =
+            btn.dataset.company;
+
+        document.getElementById("modalSalary").textContent =
+            btn.dataset.salary;
+
+        document.getElementById("modalSkills").textContent =
+            btn.dataset.skills;
+
+        document.getElementById("modalDescription").textContent =
+            btn.dataset.description;
+
+        jobDetailsModal.classList.remove("hidden");
+        jobDetailsModal.classList.add("flex");
+    });
+
+});
+
+
+
+
+
+
     const mobileBtn = document.getElementById("mobileBtn");
     const mobileMenu = document.getElementById("mobileMenu");
 
