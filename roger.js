@@ -1,5 +1,7 @@
 ﻿document.addEventListener("DOMContentLoaded", () => {
 
+
+    
     
     function toggleModal(openBtnId, modalId, closeSelectors) {
         const openBtn = document.getElementById(openBtnId);
