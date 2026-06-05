@@ -27,7 +27,28 @@
     }, 20);
 }
 
+animateCounter(
+    "placementRate",
+    95,
+    "%"
+);
 
+animateCounter(
+    "highestPackage",
+    24,
+    " LPA"
+);
+
+animateCounter(
+    "averagePackage",
+    8,
+    " LPA"
+);
+
+animateCounter(
+    "studentsPlaced",
+    500
+);
     
     function toggleModal(openBtnId, modalId, closeSelectors) {
         const openBtn = document.getElementById(openBtnId);
