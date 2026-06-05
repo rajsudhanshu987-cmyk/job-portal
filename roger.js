@@ -1,7 +1,33 @@
 ﻿document.addEventListener("DOMContentLoaded", () => {
 
 
-    
+    function animateCounter(id, target, suffix = "") {
+
+    let count = 0;
+
+    const element =
+        document.getElementById(id);
+
+    const speed = target / 100;
+
+    const timer = setInterval(() => {
+
+        count += speed;
+
+        if (count >= target) {
+
+            count = target;
+            clearInterval(timer);
+
+        }
+
+        element.textContent =
+            Math.floor(count) + suffix;
+
+    }, 20);
+}
+
+
     
     function toggleModal(openBtnId, modalId, closeSelectors) {
         const openBtn = document.getElementById(openBtnId);
