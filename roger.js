@@ -27,28 +27,48 @@
     }, 20);
 }
 
-animateCounter(
-    "placementRate",
-    95,
-    "%"
-);
+const statsSection =
+    document.querySelector("#placementRate");
 
-animateCounter(
-    "highestPackage",
-    24,
-    " LPA"
-);
+const observer =
+    new IntersectionObserver((entries) => {
 
-animateCounter(
-    "averagePackage",
-    8,
-    " LPA"
-);
+        entries.forEach(entry => {
 
-animateCounter(
-    "studentsPlaced",
-    500
-);
+            if(entry.isIntersecting){
+
+                animateCounter(
+                    "placementRate",
+                    95,
+                    "%"
+                );
+
+                animateCounter(
+                    "highestPackage",
+                    24,
+                    " LPA"
+                );
+
+                animateCounter(
+                    "averagePackage",
+                    8,
+                    " LPA"
+                );
+
+                animateCounter(
+                    "studentsPlaced",
+                    500,
+                    "+"
+                );
+
+                observer.disconnect();
+            }
+
+        });
+
+    });
+
+observer.observe(statsSection);
     
     function toggleModal(openBtnId, modalId, closeSelectors) {
         const openBtn = document.getElementById(openBtnId);
