@@ -21,8 +21,9 @@
 
         }
 
-        element.textContent =
-            Math.floor(count) + suffix;
+       element.textContent =
+    Math.floor(count).toLocaleString()
+    + suffix;
 
     }, 20);
 }
