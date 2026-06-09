@@ -128,27 +128,30 @@ function showNotification() {
 setInterval(showNotification, 10000);
 
 const applyForm = document.getElementById("applyForm");
-const toast = document.getElementById("toast");
+function showToast(message, type = "success") {
 
-applyForm?.addEventListener("submit", (e) => {
-    e.preventDefault();
+    const toast = document.getElementById("toast");
 
-    
-    toast.classList.remove("hidden");
+    if (!toast) return;
 
-    
+    toast.textContent = message;
+
+    toast.classList.remove(
+        "hidden",
+        "bg-green-600",
+        "bg-red-600"
+    );
+
+    if (type === "success") {
+        toast.classList.add("bg-green-600");
+    } else {
+        toast.classList.add("bg-red-600");
+    }
+
     setTimeout(() => {
         toast.classList.add("hidden");
     }, 3000);
-
- 
-    applyModal.classList.add("hidden");
-    applyModal.classList.remove("flex");
-
-   
-    applyForm.reset();
-});
-
+}
 
 
 const jobDetailsModal =
